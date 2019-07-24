@@ -52,7 +52,7 @@ client.on('message', msg => {
     if(channel != null) {
       channel.join().then(connection => {
         play(link, connection)
-        msg.channel.send("Tera gra: "+link)
+        msg.channel.send("Tera gra muzyyka")
       }).catch(e => {
         console.error(e);
       });
@@ -90,6 +90,5 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 const play = async (link, connection) => {
   connection.playStream(YTDL(link))
 }
-
 
 client.login(config.token);
