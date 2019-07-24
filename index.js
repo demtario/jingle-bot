@@ -1,12 +1,12 @@
 const Discord = require('discord.js')
 const YTDL = require('ytdl-core')
+
+const config = require('./config')
 const database = require('./database')
 
 const client = new Discord.Client()
 
 let cache = database.open('db.json')
-
-const config = cache.config
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
